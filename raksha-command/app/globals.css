@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+
+.raksha-pin { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9999px; border: 3px solid #fff; font: 700 11px/1 system-ui, sans-serif; color: #fff; box-shadow: 0 0 0 2px rgba(0,0,0,.6); }
+.raksha-pin--active { background: #059669; }
+.raksha-pin--battery_low { background: #f59e0b; color: #000; }
+.raksha-pin--sos { background: #dc2626; animation: raksha-pulse 1s infinite; }
+.raksha-pin--stale { background: #52525b; border-style: dashed; border-color: #fbbf24; }
+.raksha-pin--offline { background: #27272a; border-style: dashed; border-color: #a1a1aa; color: #a1a1aa; }
+@keyframes raksha-pulse {
+  0% { box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 0 rgba(220,38,38,.9); }
+  100% { box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 22px rgba(220,38,38,0); }
+}
+@media (prefers-reduced-motion: reduce) { .raksha-pin--sos { animation: none; } }
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #18181b; color: #e4e4e7; }
